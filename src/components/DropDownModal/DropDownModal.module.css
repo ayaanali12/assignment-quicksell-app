@@ -1,9 +1,8 @@
-
-.display_dropdown{
+.display_dropdown {
   position: relative;
 }
 
- .display_dropdown .dropdown_label_container {
+.display_dropdown .dropdown_label_container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,7 +28,6 @@
   gap: 1rem;
 }
 
-
 .dropdown_content_row {
   display: flex;
   flex-direction: row;
@@ -44,4 +42,8 @@
   font-weight: bold;
 }
 
-
+select {
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}

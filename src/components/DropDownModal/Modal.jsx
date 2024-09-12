@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
-import { useDetectClickOutside } from "react-detect-click-outside";
 
-
-function Modal({ openModal, closeModal, children, position,componentRef }) {
+function Modal({ openModal, closeModal, children, position, componentRef }) {
   const dialogRef = useRef();
 
   useEffect(() => {
@@ -16,19 +14,17 @@ function Modal({ openModal, closeModal, children, position,componentRef }) {
   const handleOutsideClick = (e) => {
     if (componentRef.current && !componentRef.current.contains(e.target)) {
       dialogRef.current?.close();
-      console.log("yayyyy")
+      console.log("yayyyy");
     }
   };
 
   useEffect(() => {
-    document.addEventListener('click', handleOutsideClick);
+    document.addEventListener("click", handleOutsideClick);
 
     return () => {
-      document.removeEventListener('click', handleOutsideClick);
+      document.removeEventListener("click", handleOutsideClick);
     };
   });
-
- 
 
   return (
     <>
@@ -38,8 +34,8 @@ function Modal({ openModal, closeModal, children, position,componentRef }) {
         style={{
           marginLeft: 0,
           marginTop: 40,
-          width:100,
-          height:100,
+          width: 100,
+          height: 100,
           left: position.x,
           right: position.y,
         }}
